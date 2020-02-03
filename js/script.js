@@ -93,7 +93,7 @@ $("#buscador").keyup(function() {
       limit: 10
     },
     success: function(response) {
-      createContent(response, searchType);
+      createContent(response);
     },
     fail: function(err) {
       console.log(err);
@@ -104,7 +104,7 @@ $("#buscador").keyup(function() {
   });
 });
 
-function createContent(response, searchType) {
+function createContent(response) {
   main.empty();
   response.data.results.forEach(element => {
     var newContent = $("<div class='content'>");
