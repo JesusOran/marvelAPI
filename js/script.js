@@ -117,6 +117,11 @@ function createContent(response) {
     } else {
       newContent.append(`<h1>${element.title}</h1>`);
     }
-    newContent.append(`<article><p>${element.description}</p></article>`);
+    if (element.description === null){
+      newContent.append(`<article><p>Sin descripción</p></article>`);
+    }
+    else{
+      newContent.append(`<article><p>${element.description}</p></article>`);
+    }
   });
 }
