@@ -1,0 +1,64 @@
+$bodyColor: #ffffff;
+$navColor: rgb(68, 68, 68);
+$navLetterColor: white;
+$h1Color: white;
+$h1bgColor: red;
+@mixin arrangeContent() {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+body {
+  background-color: $bodyColor;
+}
+
+nav {
+  font-size: larger;
+  background-color: $navColor;
+  color: $navLetterColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  > a {
+    margin: 10px;
+    cursor: pointer;
+  }
+}
+
+#main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#spin{
+  display: flex;
+  justify-content: center;
+  #spinner{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+  }
+}
+
+
+#title {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background-color: $h1bgColor;
+  color: $h1Color;
+}
+
+.content {
+  @include arrangeContent();
+  > article{
+    width: 30%;
+  }
+  > img {
+    margin: 10px;
+    width: 320px;
+    height: 450px;
+  }
+}
