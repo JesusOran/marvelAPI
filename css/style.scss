@@ -12,6 +12,10 @@ body {
   background-color: $bodyColor;
 }
 
+#leerMenos {
+  display: none;
+}
+
 nav {
   font-size: larger;
   background-color: $navColor;

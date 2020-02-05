@@ -2,6 +2,10 @@ body {
   background-color: #ffffff;
 }
 
+#leerMenos {
+  display: none;
+}
+
 nav {
   font-size: larger;
   background-color: #444444;

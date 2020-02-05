@@ -79,6 +79,7 @@ $("#buscador").keyup(function() {
   var characterSeach = `&nameStartsWith=${userSearch}`;
   var finalSearch = "";
   var searchType = "";
+
   if (buscarComic === true) {
     finalSearch = comicSearch;
     searchType = "comics";
@@ -117,11 +118,42 @@ function createContent(response) {
     } else {
       newContent.append(`<h1>${element.title}</h1>`);
     }
-    if (element.description === null){
+    if (element.description === null || element.description === "") {
       newContent.append(`<article><p>Sin descripción</p></article>`);
-    }
-    else{
-      newContent.append(`<article><p>${element.description}</p></article>`);
+    } else {
+      var fullText = element.description;
+      var fullTextNum = fullText.length;
+      var midText = fullTextNum / 2;
+      var lessText = fullText.slice(0, midText) + "... ";
+      var showMore = `<a class='showMore' href='#'>Leer más</a><span id="leerMenos">${fullText} <a class='showLess' href=""> Leer menos</a></span> `;
+      newContent.append(`<article><p>${lessText}</p>${showMore}</article>`);
     }
   });
 }
+
+$(document).on("click", ".showMore", function(event) {
+  event.preventDefault();
+  $(event.target).hide();
+  $(event.target)
+    .prev()
+    .hide();
+  $(event.target)
+    .nextAll()
+    .show();
+  $(event.target)
+    .nextAll()
+    .children()
+    .show();
+});
+
+$(document).on("click", ".showLess", function(event) {
+  event.preventDefault();
+  $(event.target).hide();
+  $(event.target)
+    .parent()
+    .hide();
+  $(event.target)
+    .parent()
+    .prevAll()
+    .show();
+});
