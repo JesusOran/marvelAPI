@@ -157,3 +157,7 @@ $(document).on("click", ".showLess", function(event) {
     .prevAll()
     .show();
 });
+
+$(document).on("click", ".content > img", function(event) {
+  $(event.target).nextAll().toggle();
+})

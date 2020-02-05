@@ -57,10 +57,15 @@ nav {
 
 .content {
   @include arrangeContent();
+  > h1{
+    display: none;
+  }
   > article{
     width: 30%;
+    display: none;
   }
   > img {
+    cursor: pointer;
     margin: 10px;
     width: 320px;
     height: 450px;

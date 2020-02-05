@@ -81,11 +81,17 @@ nav > a {
           align-items: center;
 }
 
+.content > h1 {
+  display: none;
+}
+
 .content > article {
   width: 30%;
+  display: none;
 }
 
 .content > img {
+  cursor: pointer;
   margin: 10px;
   width: 320px;
   height: 450px;
