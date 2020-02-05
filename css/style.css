@@ -96,4 +96,8 @@ nav > a {
   width: 320px;
   height: 450px;
 }
+
+.content > img:hover {
+  border: solid red;
+}
 /*# sourceMappingURL=style.css.map */

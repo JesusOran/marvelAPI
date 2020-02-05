@@ -65,6 +65,9 @@ nav {
     display: none;
   }
   > img {
+    &:hover{
+      border: solid red;
+    }
     cursor: pointer;
     margin: 10px;
     width: 320px;
